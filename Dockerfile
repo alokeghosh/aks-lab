@@ -1,4 +1,4 @@
 FROM nginx:latest
 MAINTAINER Aloke Ghosh
-RUN echo "-----------------$$$jenkins CI/CD pipeline After build and puse image ACR and depoly in AKS$$$------------------" > /usr/share/nginx/html/index.html
+RUN echo "-----------------This is CI/CD pipeline GitHub-jenkins-ACR-AKS--working fine ------------------" > /usr/share/nginx/html/index.html
 EXPOSE 80
