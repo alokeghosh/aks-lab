@@ -24,6 +24,7 @@ spec:
       containers:
       - name: project-jenkins-container
         image: alokeacr.azurecr.io/alokeacr/acr-pipeline-job:#{Build.BuildId}#
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
