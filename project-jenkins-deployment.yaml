@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: project-jenkins-container
-        image: alokeacr.azurecr.io/alokeacr/acr-pipeline-job:$BUILD_NUMBER
+        image: alokeacr.azurecr.io/alokeacr/acr-pipeline-job:#{Build.BuildId}#
         ports:
         - containerPort: 80
 ---
