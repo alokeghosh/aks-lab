@@ -36,7 +36,7 @@ metadata:
   labels:
     service: project-jenkins-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: dev
   ports:
