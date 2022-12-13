@@ -8,7 +8,8 @@ WORKDIR /opt/tomcat
 RUN curl -O -L  https://downloads.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-9.0.70/* /opt/tomcat/.
-RUN yum -y install java
+RUN dnf update -y
+RUN dnf install java-11-openjdk -y
 RUN java -version
 
 WORKDIR /opt/tomcat/webapps
