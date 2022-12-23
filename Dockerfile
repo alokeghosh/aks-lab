@@ -14,8 +14,8 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum -y install java
 RUN java -version
 
-WORKDIR /opt/tomcat/webapps
-RUN mv sample.war /opt/tomcat/webapps
+
+COPY sample.war /opt/tomcat/webapps
 
 EXPOSE 8080
 
