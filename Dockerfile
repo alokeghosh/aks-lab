@@ -15,7 +15,7 @@ RUN yum -y install java
 RUN java -version
 
 WORKDIR /opt/tomcat/webapps
-RUN sample.war /opt/tomcat/webapps
+RUN mv sample.war /opt/tomcat/webapps
 
 EXPOSE 8080
 
