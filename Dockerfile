@@ -1,19 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
-WORKDIR /app
+FROM nginx:latest
+MAINTAINER Aloke Ghosh
+RUN echo "-----------------Welcome To RED Nginx WebSite ONE------------------" > /usr/share/nginx/html/index.html
 EXPOSE 80
-
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ["HelloDockerWeb/HelloDockerWeb.csproj", "HelloDockerWeb/"]
-RUN dotnet restore "HelloDockerWeb/HelloDockerWeb.csproj"
-COPY . .
-WORKDIR "/src/HelloDockerWeb"
-RUN dotnet build "HelloDockerWeb.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "HelloDockerWeb.csproj" -c Release -o /app/publish
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "HelloDockerWeb.dll"]
